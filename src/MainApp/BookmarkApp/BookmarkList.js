@@ -1,34 +1,51 @@
 import { useState } from "react";
 
 
-function BookmarkList({ bookmarks, tags }) {
+function BookmarkList({ bookmarks }) {
 
-    const [filter, setFilter] = useState("all");
+    const [filter, setFilter] = useState();
 
-    const filterButtons = tags.map((tag) => (
-        <button onClick={() => setFilter(tag)}>{tag}</button>
-    ));
-
-    const filterOptions = () => {
-        if (bookmarks.tag === filter) {
-            return (bookmarks) => bookmarks.tag;
-        } else if (filter === "all") {
-            return (bookmarks) => bookmarks;
+    const filterTags = (value) => {
+        if (value === 'all') {
+            setFilter(null)
+        } else {
+            setFilter(value)
         }
     }
 
-    const listItems = bookmarks
-    .filter(filterOptions)
-    .map(({ title, url, id }) => (
-        <li key={id}>
-            <a href={url}>{title}</a>
-        </li>
-    ));
+    // const filterBookmarks = (bookmark) => {
+    //     if (filter === null) {
+    //         return bookmark
+    //     } else if (filter === bookmark.tag) {
+    //         return bookmark
+    //     }
+    // }
+
+    const tags = bookmarks.map(bookmark => bookmark.tag);
+    const uniqueTags = [...new Set(tags)];
+    const filterOptions = uniqueTags.map((tag) => (
+        <option key={tag} value={tag}>{tag}</option>
+    ))
+
+    const bookmarkListItems = bookmarks
+    .filter(bookmark => {
+        if (!filter) {
+            return bookmark
+        } else if (filter === bookmark.tag) {
+            return bookmark
+        }
+    })
+    .map((bookmark) => (
+        <li key={bookmark.id}><a href={bookmark.url}>{bookmark.title}</a></li>
+    ))
+
   return (
     <div>
-        <button onClick={() => setFilter("all")}>All</button>
-        {filterButtons}
-        <ul>{listItems}</ul>
+        <select name="" id="" onChange={(e) => filterTags(e.target.value)}>
+            <option value="all">all</option>
+            {filterOptions}
+        </select>
+        <ul>{bookmarkListItems}</ul>
     </div>
   );
 }
