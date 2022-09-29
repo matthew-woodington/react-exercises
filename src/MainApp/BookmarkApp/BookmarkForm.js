@@ -18,6 +18,7 @@ function BookmarkForm({ addBookmark, createTag }) {
         }
         addBookmark(newBookmark);
         clearForm();
+        createTag();
     }
 
     const clearForm = () => {
