@@ -23,9 +23,13 @@ function BlogCmsForm({ addBlog }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Blog Title:</label>
+      <form className="cms-form" onSubmit={handleSubmit}>
+        <h1 className="cms-form-title">Add Blog</h1>
+        <label className="cms-form-label" htmlFor="title">
+          Blog Title:
+        </label>
         <input
+          className="cms-form-title-text"
           required
           name="title"
           id="title-text"
@@ -34,8 +38,9 @@ function BlogCmsForm({ addBlog }) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label htmlFor="body">Content:</label>
+        <label htmlFor="body"></label>
         <textarea
+          className="cms-form-body-text"
           required
           name="body"
           id="body-text"
@@ -45,10 +50,14 @@ function BlogCmsForm({ addBlog }) {
           value={body}
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
-        <button type="button" onClick={(e) => clearForm()}>
-          Clear
-        </button>
-        <button type="submit">Submit</button>
+        <div className="cms-form-buttons">
+          <button className="cms-button" type="button" onClick={(e) => clearForm()}>
+            Clear
+          </button>
+          <button className="cms-button" type="submit">
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );

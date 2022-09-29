@@ -1,10 +1,10 @@
 function BlogReadingDisplay(prop) {
   return (
-    <div>
-        <h1>{prop.post.title}</h1>
-        <p>{prop.post.body}</p>
+    <div className="active-blog">
+      <h1 className="active-title">{prop.post.title || "Active Blog"}</h1>
+      <p className="active-body">{prop.post.body}</p>
     </div>
-  )
+  );
 }
 
 export default BlogReadingDisplay;

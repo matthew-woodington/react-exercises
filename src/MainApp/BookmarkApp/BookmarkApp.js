@@ -44,7 +44,7 @@ function BookmarkApp() {
   };
 
   return (
-    <div>
+    <div className="bookmark-app">
       <BookmarkForm addBookmark={addBookmark} />
       <BookmarkList bookmarks={bookmarks} />
     </div>

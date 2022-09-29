@@ -1,0 +1,136 @@
+.bookmark-app {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
+  
+  .bm-form {
+    width: 45%;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #16161a;
+    margin: 3rem;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+  
+  .bm-form-title {
+    color: #fffffe;
+    font-size: 2rem;
+  }
+  
+  .bm-form-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  
+  .bm-form-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    text-align: start;
+    padding: 0;
+    font-size: 1rem;
+    color: #fffffe;
+    margin: 0.5rem 0 ;
+  }
+  
+  .bm-text {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #94a1b2;
+    color: #16161a;
+    height: 2rem;
+  }
+  
+  .bm-label {
+    color: #94a1b2;
+    font-size: 1.5rem;
+  }
+  
+  .bm-button {
+    font-size: 1rem;
+    color: #fffffe;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #7f5af0;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.5rem 0 0;
+  }
+  
+  .bm-button:hover {
+    color: #b8c1ec;
+    background-color: #9c81ed;
+  }
+  
+  .bm-column {
+    width: 45%;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #16161a;
+    margin: 3rem;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+  
+  .bm-col-title {
+    color: #fffffe;
+    font-size: 2rem;
+  }
+  
+  .bm-select {
+    width: 80%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    color: #16161a;
+    background-color: #94a1b2;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .bm-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .bm-item {
+    margin: 1rem;
+  }
+  
+  .bm-link {
+    font-size: 1.5rem;
+    color: #94a1b2;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.2rem;
+  }
+  
+  .bm-link:hover {
+    color: #7f5af0;
+    background-color: #242629;
+  }
+
+  @media (max-width: 1056px) {
+    .bookmark-app {
+      flex-direction: column;
+      align-items: center;
+    }
+    .bm-form, .bm-column {
+      width: 80%;
+    }
+  }

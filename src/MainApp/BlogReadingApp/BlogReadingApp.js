@@ -22,11 +22,10 @@ const INITIAL_BLOGS = [
     title: "I am a Blog",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est sit amet facilisis magna etiam tempor. Semper risus in hendrerit gravida rutrum. Dictum varius duis at consectetur lorem donec massa sapien faucibus. Eget felis eget nunc lobortis mattis aliquam. Faucibus purus in massa tempor nec. Condimentum lacinia quis vel eros donec. Vehicula ipsum a arcu cursus vitae congue mauris. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit. Dignissim enim sit amet venenatis urna. Sem nulla pharetra diam sit. Ut tellus elementum sagittis vitae et leo duis ut. Viverra aliquet eget sit amet tellus cras. Consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat. Leo duis ut diam quam nulla porttitor massa. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus. Nullam eget felis eget nunc lobortis mattis. Ullamcorper velit sed ullamcorper morbi tincidunt.",
     id: 4,
-  }
+  },
 ];
 
 function BlogReadingApp() {
-
   const [blogs, setBlogs] = useState(INITIAL_BLOGS);
   const [post, setPost] = useState([]);
 
@@ -34,12 +33,16 @@ function BlogReadingApp() {
     const index = blogs.findIndex((blog) => blog.id === id);
     const activePost = blogs[index];
     setPost(activePost);
-  }
+  };
 
   return (
-    <div>
-      <BlogReadingList blogs={blogs} displayPost={displayPost}/>
-      <BlogReadingDisplay post={post}/>
+    <div className="blog-reader-container">
+      <div className="blog-column">
+        <h1 className="blog-title">Blogs:</h1>
+        <p className="read-instruction">- click to view -</p>
+        <BlogReadingList blogs={blogs} displayPost={displayPost} />
+      </div>
+      <BlogReadingDisplay post={post} />
     </div>
   );
 }

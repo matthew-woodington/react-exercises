@@ -24,20 +24,21 @@ function BlogForm() {
 
   return (
     <div className="form1-container">
+      <h1 className="form1-title">Create New Blog</h1>
       <form className="blog-form1" onSubmit={handleSubmit}>
-        <section className="title1">
-          <label htmlFor="title">Blog Title:</label>
-          <input
-            className="blog1-title"
-            required
-            name="title"
-            id="title-text"
-            type="text"
-            placeholder="Blog title here..."
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </section>
+        <label className="blog1-title-label" htmlFor="title">
+          Blog Title:
+        </label>
+        <input
+          className="blog1-title"
+          required
+          name="title"
+          id="title-text"
+          type="text"
+          placeholder="Blog title here..."
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
         <label htmlFor="body"></label>
         <textarea
           className="blog1-text"

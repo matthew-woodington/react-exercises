@@ -30,9 +30,12 @@ function ContactForm({ addContact }) {
   return (
     <div className="contact-container">
       <form className="contact-form" onSubmit={handleSubmit}>
+        <h1 className="cont-form-title">Add Contact</h1>
         <ul className="cont-form-list">
           <li className="cont-form-li">
-            <label htmlFor="first-name">First name:</label>
+            <label className="cont-form-label" htmlFor="first-name">
+              First name:
+            </label>
             <input
               className="contact-text"
               required
@@ -44,7 +47,9 @@ function ContactForm({ addContact }) {
             />
           </li>
           <li className="cont-form-li">
-            <label htmlFor="last-name">Last name:</label>
+            <label className="cont-form-label" htmlFor="last-name">
+              Last name:
+            </label>
             <input
               className="contact-text"
               required
@@ -56,7 +61,9 @@ function ContactForm({ addContact }) {
             />
           </li>
           <li className="cont-form-li">
-            <label htmlFor="address">Address:</label>
+            <label className="cont-form-label" htmlFor="address">
+              Address:
+            </label>
             <input
               className="contact-text"
               required
@@ -68,7 +75,9 @@ function ContactForm({ addContact }) {
             />
           </li>
           <li className="cont-form-li">
-            <label htmlFor="phone">Phone number:</label>
+            <label className="cont-form-label" htmlFor="phone">
+              Phone number:
+            </label>
             <input
               className="contact-text"
               required

@@ -1,5 +1,10 @@
 import { useState } from "react";
 import "./App.css";
+import "./BlogCmsApp/BlogCmsApp.css";
+import "./BookmarkApp/BookmarkApp.css";
+import "./BlogReadingApp/BlogReadingApp.css";
+import "./ContactApp/ContactApp.css";
+import "./BlogForm/BlogForm.css";
 import BlogCms from "./BlogCmsApp/BlogCms";
 import BlogForm from "./BlogForm/BlogForm";
 import BlogReadingApp from "./BlogReadingApp/BlogReadingApp";
@@ -29,7 +34,9 @@ function App() {
   return (
     <div className="App">
       <nav className="nav-bar">
-        <div className="site-name" onClick={() => setAppView("main")}>App Library</div>
+        <div className="site-name" onClick={() => setAppView("main")}>
+          App Library
+        </div>
         <button className="nav-button" type="button" onClick={() => setAppView("blog-form")}>
           Blog Form
         </button>
