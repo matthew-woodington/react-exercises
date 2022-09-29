@@ -28,7 +28,7 @@ const INITIAL_BLOGS = [
 
 function BlogCms() {
   const [blogs, setBlogs] = useState(INITIAL_BLOGS);
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState();
 
   const addBlog = (newBlog) => {
     setBlogs([...blogs, newBlog]);
@@ -62,7 +62,9 @@ function BlogCms() {
         <BlogCmsList blogs={blogs} displayPost={displayPost} />
       </div>
       <div className="active-col">
-        <BlogCmsDisplay post={post} removeBlog={removeBlog} updateBlog={updateBlog} />
+        <div className="cms-active-blog">
+          {post && <BlogCmsDisplay post={post} removeBlog={removeBlog} updateBlog={updateBlog} />}
+        </div>
       </div>
     </div>
   );
