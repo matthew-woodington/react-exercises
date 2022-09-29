@@ -10,9 +10,12 @@ function ContactApp() {
   };
 
   return (
-    <div>
+    <div className="contact-app">
       <ContactForm addContact={addContact} />
-      <ContactList contacts={contacts} />
+      <div className="contact-container">
+        <h1 className="cont-title">Contacts:</h1>
+        <ContactList contacts={contacts} />
+      </div>
     </div>
   );
 }

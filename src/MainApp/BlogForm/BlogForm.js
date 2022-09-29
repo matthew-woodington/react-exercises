@@ -23,33 +23,41 @@ function BlogForm() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Blog Title:</label>
-        <input
-          required
-          name="title"
-          id="title-text"
-          type="text"
-          placeholder="Blog title here..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label htmlFor="body">Content:</label>
+    <div className="form1-container">
+      <form className="blog-form1" onSubmit={handleSubmit}>
+        <section className="title1">
+          <label htmlFor="title">Blog Title:</label>
+          <input
+            className="blog1-title"
+            required
+            name="title"
+            id="title-text"
+            type="text"
+            placeholder="Blog title here..."
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </section>
+        <label htmlFor="body"></label>
         <textarea
+          className="blog1-text"
           required
           name="body"
           id="body-text"
-          cols="30"
-          rows="10"
+          cols="80"
+          rows="15"
           placeholder="Enter blog content here..."
           value={body}
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
-        <button type="button" onClick={(e) => clearForm()}>
-          Clear
-        </button>
-        <button type="submit">Submit</button>
+        <section className="form1-buttons">
+          <button className="form1-button" type="button" onClick={(e) => clearForm()}>
+            Clear
+          </button>
+          <button className="form1-button" type="submit">
+            Submit
+          </button>
+        </section>
       </form>
     </div>
   );

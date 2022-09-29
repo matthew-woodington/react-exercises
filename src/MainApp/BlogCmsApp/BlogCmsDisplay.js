@@ -7,7 +7,7 @@ function BlogCmsDisplay(props) {
     const [newBody, setNewBody] = useState(props.post.body);
 
     const handleSave = (e) => {
-        props.updateBlog(props.post.id, newBody, newTitle);
+        props.updateBlog(props.post.id, newTitle, newBody);
         setIsEditing(false);
       }
 

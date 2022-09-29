@@ -28,24 +28,25 @@ function App() {
 
   return (
     <div className="App">
-      <nav>
-        <button type="button" onClick={() => setAppView("blog-form")}>
+      <nav className="nav-bar">
+        <div className="site-name" onClick={() => setAppView("main")}>App Library</div>
+        <button className="nav-button" type="button" onClick={() => setAppView("blog-form")}>
           Blog Form
         </button>
-        <button type="button" onClick={() => setAppView("contacts")}>
+        <button className="nav-button" type="button" onClick={() => setAppView("contacts")}>
           Contact List
         </button>
-        <button type="button" onClick={() => setAppView("reading")}>
+        <button className="nav-button" type="button" onClick={() => setAppView("reading")}>
           Blog Reader
         </button>
-        <button type="button" onClick={() => setAppView("bookmark")}>
+        <button className="nav-button" type="button" onClick={() => setAppView("bookmark")}>
           Bookmark App
         </button>
-        <button type="button" onClick={() => setAppView("blog-cms")}>
+        <button className="nav-button" type="button" onClick={() => setAppView("blog-cms")}>
           Blog CMS
         </button>
       </nav>
-      <main>{activeHTML}</main>
+      <main className="main-site">{activeHTML}</main>
     </div>
   );
 }
